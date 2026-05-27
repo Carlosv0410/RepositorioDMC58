@@ -52,6 +52,9 @@ else:
 
     st.write(datos)
 
+    st.write(datos.info())
+    st.write(datos.describe())
+
   else: 
     st.write("Cargue el archivo ")
     
