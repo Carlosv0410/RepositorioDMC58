@@ -1,5 +1,6 @@
 import streamlit as st
 import numpy as np
+import pandas as pd
 
 st.title("Mi primera aplicación en python")
 
@@ -39,5 +40,6 @@ elif sesion == "Sesión 3":
 
 else:
   st.write("Bienvenido la sesión 4")
+  archivo = st.sidebar.file_uploader("Cargue su archivo")
 
 
