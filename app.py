@@ -45,9 +45,9 @@ else:
   
   if archivo is not None:
     
-    if archivo.name.endswith(.csv):
+    if archivo.name.endswith(".csv"):
       datos = pd.read_csv(archivo)
-    elif archivo.name.endswith(.xlsx):
+    elif archivo.name.endswith(".xlsx"):
       datos = pd.read_excel(archivo)
 
     st.write(datos)
