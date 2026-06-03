@@ -56,13 +56,13 @@ else:
     st.write(datos.info())
     st.write(datos.describe())
 
-    lista_columnas_numericas = df.select_dtypes(include="number").columns.tolist()
-    lista_columnas_categoricas = df.select_dtypes(include="object").columns.tolist()
+    lista_columnas_numericas = datos.select_dtypes(include="number").columns.tolist()
+    lista_columnas_categoricas = datos.select_dtypes(include="object").columns.tolist()
 
     ejex = st.selectbox("Seleccione el eje x", lista_columnas_numericas)
     ejey = st.selectbox("Seleccione el eje y", lista_columnas_numericas)
 
-    fig = px.scatter(df, x = ejex, y = ejey)
+    fig = px.scatter(datos, x = ejex, y = ejey)
 
     st.write(fig)
 
