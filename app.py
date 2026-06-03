@@ -1,6 +1,7 @@
 import streamlit as st
 import numpy as np
 import pandas as pd
+import plotly.express as px
 
 st.title("Mi primera aplicación en python")
 
@@ -54,6 +55,16 @@ else:
 
     st.write(datos.info())
     st.write(datos.describe())
+
+    lista_columnas_numericas = df.select_dtypes(include="number").columns.tolist()
+    lista_columnas_categoricas = df.select_dtypes(include="object").columns.tolist()
+
+    ejex = st.selectbox("Seleccione el eje x", lista_columnas_numericas)
+    ejey = st.selectbox("Seleccione el eje y", lista_columnas_numericas)
+
+    fig = px.scatter(df, x = ejex, y = ejey)
+
+    st.write(fig)
 
   else: 
     st.write("Cargue el archivo ")
