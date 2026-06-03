@@ -61,8 +61,9 @@ else:
 
     ejex = st.selectbox("Seleccione el eje x", lista_columnas_numericas)
     ejey = st.selectbox("Seleccione el eje y", lista_columnas_numericas)
+    color =  st.selectbox("Seleccione la categoria", lista_columnas_categoricas)
 
-    fig = px.scatter(datos, x = ejex, y = ejey)
+    fig = px.scatter(datos, x = ejex, y = ejey, color = color)
 
     st.write(fig)
 
